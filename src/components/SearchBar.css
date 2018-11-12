@@ -1,0 +1,10 @@
+.SearchBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border: 1px solid black;
+}
+
+.logo-name-section {
+    display: flex;
+}
