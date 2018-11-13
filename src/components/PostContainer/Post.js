@@ -15,12 +15,9 @@ const Post = props => {
         <i className="far fa-comment" />
       </div>
       <p>{props.post.likes} likes</p>
-      <CommentSection comments={props.post.comments} />
+      <CommentSection comments={props.post.comments}/>
       <div>
         <p>{props.post.timestamp}</p>
-      </div>
-      <div>
-        <input type="text" placeholder="Add a comment..." />
       </div>
     </div>
   );
