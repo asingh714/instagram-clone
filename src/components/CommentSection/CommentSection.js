@@ -29,10 +29,3 @@ CommentSection.propTypes = {
 
 
 export default CommentSection;
-
-// {props.comments.map(comment => (
-//   <div>
-//     
-//   </div>
-// ))}
-// 

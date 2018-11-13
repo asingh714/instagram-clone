@@ -12,16 +12,6 @@ const PostContainer = props => {
   );
 };
 
-// PostContainer.propTypes = {
-//   posts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       username: PropTypes.string,
-//       likes: PropTypes.number,
-//       timestamp: PropTypes.string
-//     })
-//   )
-// };
-
 PostContainer.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object) 
 }

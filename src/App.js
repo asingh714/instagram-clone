@@ -6,18 +6,45 @@ import './App.css';
 
 class App extends Component {
   constructor() {
+    console.log("Constructor Invoked!")
     super();
     this.state = {
-      posts: dummyData
+      posts: dummyData,
+      filterTerm: '',
     }
   }
 
+  handleInputChange = event => {
+    this.setState({
+      filterTerm: event.target.value
+    })
+  }
+
+  componentDidMount() {
+    console.log("CDM Invoked!");
+    this.setState({ posts: dummyData });
+  }
 
   render() {
+    let filteredData = dummyData;
+
+    if(this.state.filterTerm !== "") {
+      filteredData = filteredData.filter(data => {
+        let username =  data.username.toLowerCase().includes(this.state.filterTerm.toLowerCase());
+        return username;
+      })
+    }
+
+
+
+    console.log("Render Invoked!")
     return (
       <div className="App">
-       <SearchBar /> 
-       <PostContainer posts={this.state.posts}/>
+       <SearchBar 
+       value={this.state.filterTerm}
+       handleInputChange={this.handleInputChange}
+       /> 
+       <PostContainer posts={this.state.posts} posts={filteredData}/>
       </div>
     );
   }
