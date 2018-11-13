@@ -1,29 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Comment from './Comment'
 
-const CommentSection = props => {
-  return (
-    <div className="Comments">
-      {props.comments.map(comment => (
-        <div>
-          <p>{comment.username}</p>
-          <p>{comment.text}</p>
-        </div>
-      ))}
-      <input type="text" placeholder="Add a comment..." />
-    </div>
-     
-  );
+
+class CommentSection extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: props.comments
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.comments.map((comment, index) =>
+          <Comment key={this.index} comment={comment} />
+        )}
+      </div>
+    );
+  }
 };
 
 
 CommentSection.propTypes = {
-    comments: PropTypes.arrayOf(
-        PropTypes.shape({
-            username: PropTypes.string,
-            text: PropTypes.string
-        })
-    )
-};
+  comments: PropTypes.arrayOf(PropTypes.object)
+}
+
 
 export default CommentSection;
+
+// {props.comments.map(comment => (
+//   <div>
+//     
+//   </div>
+// ))}
+// 
