@@ -1,8 +1,9 @@
 import React from "react";
+import './CommentForm.css'
 
 const CommentForm = props => {
   return (
-    <div>
+    <div className="comment-box">
       <form onSubmit={props.addCharacter}>
         <input
           type="text"

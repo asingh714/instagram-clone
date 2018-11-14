@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import "./CommentSection.css"
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -55,17 +56,17 @@ componentDidMount() {
 
   render() {
     return (
-      <div>
+      <div className="bottom-section">
         <div className="like-comment-section">
-          <i className="far fa-heart" onClick={this.addLike} />
+          <i className="heart far fa-heart" onClick={this.addLike} />
           <i className="far fa-comment" />
         </div>
-        <p>{this.state.likes} likes</p>
+        <p className="likes bold-text">{this.state.likes} likes</p>
         <div>
           {this.state.comments.map((comment, index) => (
             <Comment key={this.index} comment={comment} />
           ))}
-          <p>{this.state.timestamp}</p>
+          <p className="timestamp">{this.state.timestamp}</p>
           <CommentForm addCharacter={this.addCharacter} inputText={this.state.inputText} handleChange={this.handleChange}/>
         </div>
       </div>

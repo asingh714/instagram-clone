@@ -1,6 +1,7 @@
 .SearchBar {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
     align-items: center;
     padding: 1rem 1rem;
     border: 1px solid black;
@@ -12,15 +13,15 @@
     align-items: center;
     margin-left: 1rem;
 }
-.logo-name-section i {
+.logo-name-section .fab {
     font-size: 3rem;
     margin-right: 2rem;
     border-right: 1px solid #ddd;
-    /* padding: .5rem; */
     padding-right: 2rem;
 }
 
 .search-section input {
+    margin: 0 30rem;
     text-align: center;
     width: 20rem;
     padding: .5rem;
@@ -29,7 +30,7 @@
 }
 
 .nav-section {
-    width: 7rem;
+    width: 10rem;
     display: flex;
     justify-content: space-between;
     margin-right: 1rem;
