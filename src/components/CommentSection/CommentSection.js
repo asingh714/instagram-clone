@@ -9,7 +9,7 @@ class CommentSection extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      inputText: '',
+      comment: '',
       likes: props.likes,
       timestamp: props.timestamp,
       like: false
@@ -28,9 +28,9 @@ class CommentSection extends React.Component {
       comments: [
         ...this.state.comments,
         { username: 'joeshmo',
-          text: this.state.inputText }
+          text: this.state.comment }
       ],
-      inputText: ''
+      comment: ''
     })
 }
 
@@ -67,7 +67,7 @@ componentDidMount() {
             <Comment key={this.index} comment={comment} />
           ))}
           <p className="timestamp">{this.state.timestamp}</p>
-          <CommentForm addCharacter={this.addCharacter} inputText={this.state.inputText} handleChange={this.handleChange}/>
+          <CommentForm addCharacter={this.addCharacter} comment={this.state.comment} handleChange={this.handleChange}/>
         </div>
       </div>
     );
