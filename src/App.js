@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import PostsPage from './components/PostContainer/PostsPage'
+import Authenticate from './Authentication/Authenticate'
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      username: ""
     }
   }
 
+  
 
 
   render() {
@@ -21,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Authenticate(App);
