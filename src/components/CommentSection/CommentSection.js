@@ -8,7 +8,10 @@ class CommentSection extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      inputText: ''
+      inputText: '',
+      likes: props.likes,
+      timestamp: props.timestamp,
+      like: false
     };
   }
 
@@ -30,13 +33,41 @@ class CommentSection extends React.Component {
     })
 }
 
+addLike = () =>{
+  let numOfLikes = this.state.likes; 
+
+  if(this.state.like === false) {
+    numOfLikes += 1;
+  } else {
+    numOfLikes -= 1;
+  }
+  this.setState({
+      likes: numOfLikes,
+      like: !this.state.like
+  })
+
+}
+
+componentDidMount() {
+  console.log("CDM Invoked!");
+  this.setState({ comments: this.state.comments });
+}
+
   render() {
     return (
       <div>
-        {this.state.comments.map((comment, index) => (
-          <Comment key={this.index} comment={comment} />
-        ))}
-        <CommentForm addCharacter={this.addCharacter} inputText={this.state.inputText} handleChange={this.handleChange}/>
+        <div className="like-comment-section">
+          <i className="far fa-heart" onClick={this.addLike} />
+          <i className="far fa-comment" />
+        </div>
+        <p>{this.state.likes} likes</p>
+        <div>
+          {this.state.comments.map((comment, index) => (
+            <Comment key={this.index} comment={comment} />
+          ))}
+          <p>{this.state.timestamp}</p>
+          <CommentForm addCharacter={this.addCharacter} inputText={this.state.inputText} handleChange={this.handleChange}/>
+        </div>
       </div>
     );
   }

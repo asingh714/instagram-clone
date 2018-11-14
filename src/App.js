@@ -25,6 +25,16 @@ class App extends Component {
     this.setState({ posts: dummyData });
   }
 
+  handleChange = event => {
+    console.log('Changed');
+  }
+  addLikes = event => {
+    console.log('CLICK CLICK')
+    this.setState({
+    })
+  }
+
+
   render() {
     let filteredData = dummyData;
 
@@ -35,8 +45,6 @@ class App extends Component {
       })
     }
 
-
-
     console.log("Render Invoked!")
     return (
       <div className="App">
@@ -44,7 +52,12 @@ class App extends Component {
        value={this.state.filterTerm}
        handleInputChange={this.handleInputChange}
        /> 
-       <PostContainer posts={this.state.posts} posts={filteredData}/>
+       <PostContainer 
+       posts={this.state.posts} 
+       posts={filteredData} 
+       addLikes={this.addLikes}
+       handleChange={this.handleChange}
+       />
       </div>
     );
   }

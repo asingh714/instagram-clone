@@ -10,15 +10,7 @@ const Post = props => {
         <p>{props.post.username}</p>
       </div>
       <img src={props.post.imageUrl} alt="Posted Image" />
-      <div className="like-comment-section">
-        <i className="far fa-heart" />
-        <i className="far fa-comment" />
-      </div>
-      <p>{props.post.likes} likes</p>
-      <CommentSection comments={props.post.comments}/>
-      <div>
-        <p>{props.post.timestamp}</p>
-      </div>
+      <CommentSection comments={props.post.comments} timestamp={props.post.timestamp} likes={props.post.likes}/>
     </div>
   );
 };

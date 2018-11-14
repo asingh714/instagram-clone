@@ -6,7 +6,12 @@ const PostContainer = props => {
   return (
     <div>
       {props.posts.map(post => (
-        <Post key={post.imgUrl} post={post} /> 
+        <Post 
+        key={post.imgUrl} 
+        post={post} 
+        addLikes={props.addLikes}
+        handleChange={props.handleChange}
+        />  
       ))}
     </div>
   );
