@@ -1,10 +1,40 @@
 .SearchBar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 1rem;
     border: 1px solid black;
 }
 
 .logo-name-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+.logo-name-section i {
+    font-size: 3rem;
+    margin-right: 2rem;
+    border-right: 1px solid #ddd;
+    /* padding: .5rem; */
+    padding-right: 2rem;
+}
+
+.search-section input {
+    text-align: center;
+    width: 20rem;
+    padding: .5rem;
+    background-color: rgb(250, 250, 250);
+    border-radius: 2px;
+}
+
+.nav-section {
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
+.nav-section i {
+    color: grey;
 }
