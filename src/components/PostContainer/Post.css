@@ -1,0 +1,24 @@
+.post-section {
+    border: 1px solid red;
+    width: 60rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.top-post-section{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.top-post-section img {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem; 
+    margin-right: 1rem;
+}
+
+.post-img img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
