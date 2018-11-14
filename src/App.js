@@ -9,7 +9,7 @@ class App extends Component {
     console.log("Constructor Invoked!")
     super();
     this.state = {
-      posts: dummyData,
+      posts: [],
       filterTerm: '',
     }
   }
@@ -25,14 +25,6 @@ class App extends Component {
     this.setState({ posts: dummyData });
   }
 
-  handleChange = event => {
-    console.log('Changed');
-  }
-  addLikes = event => {
-    console.log('CLICK CLICK')
-    this.setState({
-    })
-  }
 
 
   render() {
