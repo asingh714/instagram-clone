@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import './Login.css'
 
 /**
 1. Create login directory
@@ -10,52 +11,51 @@ import React, { Component } from 'react';
 7. Force page to re-load.
 */
 
-
 class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            username: "",
-            password: ""
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
 
-    handleInputChange = event => {
-        this.setState({
-            [event.target.name]: [event.target.value]
-        });
-    }
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: [event.target.value]
+    });
+  };
 
-    handleLogin = event => {
-        const user = this.state.username;
-        localStorage.setItem("user", user);
-        window.location.reload();
-    }
+  handleLogin = event => {
+    const user = this.state.username;
+    localStorage.setItem("user", user);
+    window.location.reload();
+  };
 
-
-    render() {
-        return (
-        <form onSubmit={this.handleLogin}>
-            <h1>Instagram</h1>
-            <input 
-                type="text"
-                placeholder="Username"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChange}
-            />
-            <input 
-                type="text"
-                placeholder="Password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-            />
-            <button onClick={this.handleLogin}>Log in</button>
+  render() {
+    return (
+      <div className="login-box">
+        <form onSubmit={this.handleLogin} className="form">
+          <h1>Instagram</h1>
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            value={this.state.username}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleInputChange}
+          />
+          <div className="btn" onClick={this.handleLogin}>Log in</div>
         </form>
-        )
-    }
-
+      </div>
+    );
+  }
 }
 
 export default Login;

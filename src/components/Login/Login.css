@@ -1,0 +1,35 @@
+body {
+    background-color: #FAFAFA;
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 10rem;
+    width: 50rem;
+}
+.form h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    color: white;
+    background-color: #3e99ed;
+    cursor: pointer;
+    padding: 1rem; 
+    text-align: center
+}
