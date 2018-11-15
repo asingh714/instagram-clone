@@ -13,9 +13,40 @@ import IGLogo from '../../Assets/iglogo.png';
 7. Force page to re-load.
 */
 
+const LoginBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`
+const Form = styled.form`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 10rem;
+  width: 50rem;
+`
+
+
 const LogoImage = styled.img`
-    width: 12rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 20rem;
 `;
+
+const Input = styled.input`
+  padding: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+`
+
+const Button = styled.div`
+  color: white;
+  background-color: #3e99ed;
+  cursor: pointer;
+  padding: 1rem; 
+  text-align: center
+`
 
 class Login extends Component {
   constructor() {
@@ -40,26 +71,26 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="login-box">
-        <form onSubmit={this.handleLogin} className="form">
+      <LoginBox>
+        <Form onSubmit={this.handleLogin}>
         <LogoImage src={IGLogo} alt="instagram logo" />
-          <input
+          <Input
             type="text"
             placeholder="Username"
             name="username"
             value={this.state.username}
             onChange={this.handleInputChange}
           />
-          <input
+          <Input
             type="text"
             placeholder="Password"
             name="password"
             value={this.state.password}
             onChange={this.handleInputChange}
           />
-          <div className="btn" onClick={this.handleLogin}>Log in</div>
-        </form>
-      </div>
+          <Button onClick={this.handleLogin}>Log in</Button>
+        </Form>
+      </LoginBox>
     );
   }
 }

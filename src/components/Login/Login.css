@@ -2,29 +2,29 @@ body {
     background-color: #FAFAFA;
 }
 
-.login-box {
+/* .login-box {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
-.form {
+/* .form {
     background-color: white;
     display: flex;
     flex-direction: column;
     padding: 6rem 10rem;
     width: 50rem;
-}
-.form h1 {
-    text-align: center;
+} */
+/* .form img {
+    margin: 0 auto;
     margin-bottom: 1rem;
-}
+} */
 
-.form input {
+/* .form input {
     padding: 1rem;
     margin-bottom: 1rem;
-}
+} */
 
 .btn {
     color: white;
