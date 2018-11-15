@@ -33,12 +33,13 @@ const LogoImage = styled.img`
 `;
 
 const SearchSection = styled.input` 
-    margin: 0 30rem;
+    margin: 0 auto;
     text-align: center;
-    width: 20rem;
+    width: 30rem;
     padding: .5rem;
     background-color: rgb(250, 250, 250);
     border-radius: 2px;
+    outline: none;
 `;
 
 
