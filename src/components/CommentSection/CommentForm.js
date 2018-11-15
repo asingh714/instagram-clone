@@ -13,7 +13,8 @@ const CommentBox = styled.input`
 const CommentForm = props => {
   return (
     <div className="comment-box">
-      <form onSubmit={props.addCharacter}>
+      <form onSubmit={props.addComment}>
+      {/*  */}
         <CommentBox
           type="text"
           name="comment"

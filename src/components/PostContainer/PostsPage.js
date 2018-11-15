@@ -19,29 +19,28 @@ class PostsPage extends Component {
     super();
     this.state = {
       posts: [],
-      filterTerm: '',
+      searchTerm: '',
     }
   }
 
-  handleInputChange = event => {
+  searchPosts = event => {
     this.setState({
-      filterTerm: event.target.value
+      searchTerm: event.target.value
     })
   }
-
+  
   componentDidMount() {
     console.log("CDM Invoked!");
     this.setState({ posts: dummyData });
   }
 
 
-
   render() {
-    let filteredData = dummyData;
+    let filteredPosts = dummyData;
 
-    if(this.state.filterTerm !== "") {
-      filteredData = filteredData.filter(data => {
-        let username =  data.username.toLowerCase().includes(this.state.filterTerm.toLowerCase());
+    if(this.state.searchTerm !== "") {
+      filteredPosts = filteredPosts.filter(data => {
+        let username =  data.username.toLowerCase().includes(this.state.searchTerm.toLowerCase());
         return username;
       })
     }
@@ -50,14 +49,17 @@ class PostsPage extends Component {
     return (
       <div className="App">
        <SearchBar 
-       value={this.state.filterTerm}
-       handleInputChange={this.handleInputChange}
+       value={this.state.searchTerm}
+       searchPosts={this.searchPosts}
        /> 
        <PostContainer 
+      /* We are going to pass posts which is initially 
+      going to be [] and then we will grab the data from
+      dummyData via componentDidMount and pass it down.
+      */
        posts={this.state.posts} 
-       posts={filteredData} 
-       addLikes={this.addLikes}
-       handleChange={this.handleChange}
+       posts={filteredPosts} 
+
        />
       </div>
     );

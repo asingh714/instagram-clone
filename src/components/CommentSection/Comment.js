@@ -12,6 +12,10 @@ const UserComments = styled.div`
 const Comment = props => {
   return (
     <UserComments>
+      {/* Now we can pass the comment that is from
+      CommentSection and use it here for username and 
+      text.
+      */}
         <Username type="space">{props.comment.username}</Username>
         <p>{props.comment.text}</p>
     </UserComments>

@@ -33,6 +33,15 @@ const UserThumbnail = styled.img`
 
 const Post = props => {
   return (
+    /*
+      Post will take our data that are individual posts and
+      get our necessary things that we want. We get: 
+      1. User Thumbnail
+      2. Username
+      3. The Image that is posted. 
+      4. Comments, timestamp and likes will be passed to
+      commentSection. 
+    */
     <PostSection>
       <TopPostSection>
         <UserThumbnail src={props.post.thumbnailUrl} alt="Thumbnail Image" />

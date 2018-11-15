@@ -36,10 +36,11 @@ const SearchSection = styled.input`
     margin: 0 auto;
     text-align: center;
     width: 30rem;
-    padding: .5rem;
+    padding: 1rem;
     background-color: rgb(250, 250, 250);
     border-radius: 2px;
     outline: none;
+    font-size: 1.6rem;
 `;
 
 
@@ -50,7 +51,8 @@ const SearchBar = props => {
                 <i className="fab fa-instagram"></i>
                 <LogoImage src={IGLogo} alt="instagram logo" />
             </LogoHeader>
-            <SearchSection value={props.value} onChange={props.handleInputChange} type="text" className="fa fa-input" placeholder=" Search" />
+
+            <SearchSection value={props.value} onChange={props.searchPosts} type="text" className="fa fa-input" placeholder=" Search" />
             <NavSection>
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>

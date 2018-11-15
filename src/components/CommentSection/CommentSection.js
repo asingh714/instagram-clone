@@ -30,6 +30,10 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      /* 
+        Since we are passing props down from Post,
+        we need to put them in this.state first. 
+      */
       comments: props.comments,
       comment: '',
       likes: props.likes,
@@ -44,7 +48,7 @@ class CommentSection extends React.Component {
     })
   }
 
-  addCharacter = ev => { 
+  addComment = ev => { 
     ev.preventDefault(); 
     this.setState({
       comments: [
@@ -85,11 +89,16 @@ componentDidMount() {
         </LikeCommentSection>
         <Likes>{this.state.likes} likes</Likes>
         <div>
+          {/* We took our comments from this.state 
+          and we are going to map over them since comment
+          are an array, For each array, we pass the index
+          as key and pass comment down to comment.
+          */}
           {this.state.comments.map((comment, index) => (
-            <Comment key={this.index} comment={comment} />
+            <Comment key={index} comment={comment} />
           ))}
           <TimeStamp>{this.state.timestamp}</TimeStamp>
-          <CommentForm addCharacter={this.addCharacter} comment={this.state.comment} handleChange={this.handleChange}/>
+          <CommentForm addComment={this.addComment} comment={this.state.comment} handleChange={this.handleChange}/>
         </div>
       </BottomSection>
     );
