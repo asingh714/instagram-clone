@@ -3,7 +3,7 @@ import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 import styled from 'styled-components';
 import Username from '../../Styles/Reusables'
-// import './Post.css';
+import './Post.css';
 
 
 
@@ -12,6 +12,7 @@ const PostSection = styled.div`
   width: 60rem;
   margin: 0 auto;
   margin-top: 5rem;
+  background-color: white;
 `;
 
 const TopPostSection = styled.div`

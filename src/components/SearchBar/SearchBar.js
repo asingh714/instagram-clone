@@ -11,6 +11,7 @@ const Header = styled.div`
     align-items: center;
     padding: 1rem 1rem;
     border: 1px solid black;
+    background-color: white;
 `;
 
 const LogoHeader = styled.div`

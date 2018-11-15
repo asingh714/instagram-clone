@@ -2,7 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import styled from 'styled-components';
 import "./CommentSection.css"
+
+
+const BottomSection = styled.div`
+  padding: 0 1rem;
+`;
+
+const LikeCommentSection = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const TimeStamp = styled.p`
+  font-size: 1.2rem;
+  color: gray;
+  margin-bottom: 1rem;
+`
+
+const Likes = styled.p`
+  margin-bottom: 1rem;
+  font-weight: bold
+`
+
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -56,20 +78,20 @@ componentDidMount() {
 
   render() {
     return (
-      <div className="bottom-section">
-        <div className="like-comment-section">
+      <BottomSection>
+        <LikeCommentSection>
           <i className="heart far fa-heart" onClick={this.addLike} />
           <i className="far fa-comment" />
-        </div>
-        <p className="likes bold-text">{this.state.likes} likes</p>
+        </LikeCommentSection>
+        <Likes>{this.state.likes} likes</Likes>
         <div>
           {this.state.comments.map((comment, index) => (
             <Comment key={this.index} comment={comment} />
           ))}
-          <p className="timestamp">{this.state.timestamp}</p>
+          <TimeStamp>{this.state.timestamp}</TimeStamp>
           <CommentForm addCharacter={this.addCharacter} comment={this.state.comment} handleChange={this.handleChange}/>
         </div>
-      </div>
+      </BottomSection>
     );
   }
 }

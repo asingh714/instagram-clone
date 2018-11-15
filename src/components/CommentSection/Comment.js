@@ -4,12 +4,17 @@ import styled from 'styled-components';
 import Username from '../../Styles/Reusables'
 import './Comment.css'
 
+const UserComments = styled.div`
+  display: flex;
+  margin-bottom: .5rem;
+`
+
 const Comment = props => {
   return (
-    <div className="user-comments">
+    <UserComments>
         <Username type="space">{props.comment.username}</Username>
         <p>{props.comment.text}</p>
-    </div>
+    </UserComments>
   );
 };
 

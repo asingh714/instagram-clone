@@ -2,6 +2,7 @@ import React from "react";
 import Post from './Post.js'
 import PropTypes from "prop-types";
 
+
 const PostContainer = props => {
   return (
     <div>
