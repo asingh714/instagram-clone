@@ -52,7 +52,12 @@ const SearchBar = props => {
                 <LogoImage src={IGLogo} alt="instagram logo" />
             </LogoHeader>
             {/* 
-                We are going to grab
+                Now when we type in the input, searchText is 
+                being updated into value. We will use value to
+                set it to searchTerm through event.target.value
+
+                When the input changes,searchPosts will do some 
+                sort of logic. 
             */}
             <SearchSection value={props.searchText} onChange={props.searchPosts} type="text" className="fa fa-input" placeholder=" Search" />
             <NavSection>

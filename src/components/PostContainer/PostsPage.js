@@ -23,23 +23,38 @@ class PostsPage extends Component {
     };
   }
 
+  /* searchTerm will be updated to what is being typed
+    into the input field
+  */
   searchPosts = event => {
     this.setState({
       searchTerm: event.target.value
     });
   };
 
+  /* When render runs for the first time, it will be 
+    [] but then cdm will be invoked and set it to our data
+  */
   componentDidMount() {
     console.log("CDM Invoked!");
     this.setState({ posts: dummyData });
   }
 
   render() {
+    /*
+      This is the filter logic. We are going to set
+      a variable that is equal to our data. 
+
+      The logic states that if search term is not empty,
+      we are going to filter our array of posts and 
+      get the one where what is typed into the input is
+      included in the username.
+    */
     let filteredPosts = dummyData;
 
     if (this.state.searchTerm !== "") {
-      filteredPosts = filteredPosts.filter(data => {
-        let username = data.username
+      filteredPosts = filteredPosts.filter(post => {
+        let username = post.username
           .toLowerCase()
           .includes(this.state.searchTerm.toLowerCase());
         return username;
@@ -50,9 +65,11 @@ class PostsPage extends Component {
     return (
       <div className="App">
       {/* 
-        Value is blank at the moment because we set it to
-        '' in this.state. 
+        searchText is blank at the moment because we set it to
+        '' in this.state. We are going to pass it to SearchBar
 
+        We are passing searchPosts down to SearchBar so 
+        that it can be run onChange.
       */}
         <SearchBar
           searchText={this.state.searchTerm}
@@ -62,6 +79,9 @@ class PostsPage extends Component {
           /* We are going to pass posts which is initially 
       going to be [] and then we will grab the data from
       dummyData via componentDidMount and pass it down.
+
+        posts will equal to either all of our posts,
+        or filtered posts if there is an input
       */
           posts={this.state.posts}
           posts={filteredPosts}
