@@ -3,6 +3,16 @@ import SearchBar from '../SearchBar/SearchBar'
 import PostContainer from '../PostContainer/PostContainer'
 import dummyData from '../../dummy-data'
 
+/* 
+1. Create PostsPage in PostContainer directory. 
+2. Shift content from App.js to PostPage.js
+(This page will now serve as our main gateway of content.)
+3. In app.js, render <PostsPage />
+4. Clean up code so that it's functional 
+(imports and exports) 
+
+*/
+
 class PostsPage extends Component {
   constructor() {
     console.log("Constructor Invoked!")
