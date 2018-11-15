@@ -1,4 +1,4 @@
-.post-section {
+/* .post-section {
     border: 1px solid gray;
     width: 60rem;
     margin: 0 auto;
@@ -17,8 +17,9 @@
     width: 4rem; 
     margin-right: 1rem;
 }
+*/
 
 .post-img img {
     width: 100%;
     margin-bottom: 1rem;
-}
+} 

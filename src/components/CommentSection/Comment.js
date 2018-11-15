@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from 'styled-components';
+import Username from '../../Styles/Reusables'
 import './Comment.css'
 
 const Comment = props => {
   return (
     <div className="user-comments">
-        <p className="bold-text username">{props.comment.username}</p>
+        <Username type="space">{props.comment.username}</Username>
         <p>{props.comment.text}</p>
     </div>
   );

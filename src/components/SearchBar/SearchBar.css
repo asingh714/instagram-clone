@@ -1,19 +1,22 @@
-.SearchBar {
+/* .SearchBarContainer {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     padding: 1rem 1rem;
     border: 1px solid black;
-}
+} */
 
-.logo-name-section {
+/* .logo-name-section {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 1rem;
-}
-.logo-name-section .fab {
+} */
+
+
+/* .logo-name-section.fab  */
+.fab {
     font-size: 3rem;
     margin-right: 2rem;
     border-right: 1px solid #ddd;
@@ -29,13 +32,13 @@
     border-radius: 2px;
 }
 
-.nav-section {
+/* .nav-section {
     width: 10rem;
     display: flex;
     justify-content: space-between;
     margin-right: 1rem;
-}
+} */
 
-.nav-section i {
+i {
     color: grey;
 }

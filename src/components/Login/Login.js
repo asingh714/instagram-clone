@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
 import './Login.css'
+import IGLogo from '../../Assets/iglogo.png';
 
 /**
 1. Create login directory
@@ -10,6 +12,10 @@ import './Login.css'
 6. Create login function that sets username on localStorage
 7. Force page to re-load.
 */
+
+const LogoImage = styled.img`
+    width: 12rem;
+`;
 
 class Login extends Component {
   constructor() {
@@ -36,7 +42,7 @@ class Login extends Component {
     return (
       <div className="login-box">
         <form onSubmit={this.handleLogin} className="form">
-          <h1>Instagram</h1>
+        <LogoImage src={IGLogo} alt="instagram logo" />
           <input
             type="text"
             placeholder="Username"
