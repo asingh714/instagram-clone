@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import SearchBar from '../SearchBar/SearchBar'
-import PostContainer from '../PostContainer/PostContainer'
-import dummyData from '../../dummy-data'
+import React, { Component } from "react";
+import SearchBar from "../SearchBar/SearchBar";
+import PostContainer from "../PostContainer/PostContainer";
+import dummyData from "../../dummy-data";
 
 /* 
 1. Create PostsPage in PostContainer directory. 
@@ -15,52 +15,57 @@ import dummyData from '../../dummy-data'
 
 class PostsPage extends Component {
   constructor() {
-    console.log("Constructor Invoked!")
+    console.log("Constructor Invoked!");
     super();
     this.state = {
       posts: [],
-      searchTerm: '',
-    }
+      searchTerm: ""
+    };
   }
 
   searchPosts = event => {
     this.setState({
       searchTerm: event.target.value
-    })
-  }
-  
+    });
+  };
+
   componentDidMount() {
     console.log("CDM Invoked!");
     this.setState({ posts: dummyData });
   }
 
-
   render() {
     let filteredPosts = dummyData;
 
-    if(this.state.searchTerm !== "") {
+    if (this.state.searchTerm !== "") {
       filteredPosts = filteredPosts.filter(data => {
-        let username =  data.username.toLowerCase().includes(this.state.searchTerm.toLowerCase());
+        let username = data.username
+          .toLowerCase()
+          .includes(this.state.searchTerm.toLowerCase());
         return username;
-      })
+      });
     }
 
-    console.log("Render Invoked!")
+    console.log("Render Invoked!");
     return (
       <div className="App">
-       <SearchBar 
-       value={this.state.searchTerm}
-       searchPosts={this.searchPosts}
-       /> 
-       <PostContainer 
-      /* We are going to pass posts which is initially 
+      {/* 
+        Value is blank at the moment because we set it to
+        '' in this.state. 
+
+      */}
+        <SearchBar
+          searchText={this.state.searchTerm}
+          searchPosts={this.searchPosts}
+        />
+        <PostContainer
+          /* We are going to pass posts which is initially 
       going to be [] and then we will grab the data from
       dummyData via componentDidMount and pass it down.
       */
-       posts={this.state.posts} 
-       posts={filteredPosts} 
-
-       />
+          posts={this.state.posts}
+          posts={filteredPosts}
+        />
       </div>
     );
   }

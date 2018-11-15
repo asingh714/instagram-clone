@@ -51,8 +51,10 @@ const SearchBar = props => {
                 <i className="fab fa-instagram"></i>
                 <LogoImage src={IGLogo} alt="instagram logo" />
             </LogoHeader>
-
-            <SearchSection value={props.value} onChange={props.searchPosts} type="text" className="fa fa-input" placeholder=" Search" />
+            {/* 
+                We are going to grab
+            */}
+            <SearchSection value={props.searchText} onChange={props.searchPosts} type="text" className="fa fa-input" placeholder=" Search" />
             <NavSection>
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>
