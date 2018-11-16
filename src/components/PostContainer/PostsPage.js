@@ -83,8 +83,7 @@ class PostsPage extends Component {
         posts will equal to either all of our posts,
         or filtered posts if there is an input
       */
-          posts={this.state.posts}
-          posts={filteredPosts}
+        posts={filteredPosts.length > 0 ? filteredPosts : this.state.posts}
         />
       </div>
     );

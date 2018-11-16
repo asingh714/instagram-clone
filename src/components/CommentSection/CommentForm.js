@@ -1,8 +1,8 @@
 import React from "react";
-import styled from 'styled-components';
-import './CommentForm.css'
+import styled from "styled-components";
+import "./CommentForm.css";
 
-const CommentBox = styled.input` 
+const CommentBox = styled.input`
   width: 100%;
   padding: 1.5rem 1rem;
   border: none;
@@ -12,18 +12,21 @@ const CommentBox = styled.input`
 
 const CommentForm = props => {
   return (
-    <div className="comment-box">
-      <form onSubmit={props.addComment}>
-      {/*  */}
-        <CommentBox
-          type="text"
-          name="comment"
-          placeholder="Add a comment..."
-          value={props.comment}
-          onChange={props.handleChange}
-        />
-      </form>
-    </div>
+    /* 
+      - onSubmit will allow us to press enter and submit a 
+      comment. 
+      - the value of what is being typed in the comment box
+      will be saved as value.
+      - 
+    */
+    <form onSubmit={props.addComment}>
+      <CommentBox
+        type="text"
+        placeholder="Add a comment..."
+        value={props.comment}
+        onChange={props.handleComment}
+      />
+    </form>
   );
 };
 

@@ -42,14 +42,25 @@ class CommentSection extends React.Component {
     };
   }
 
-  handleChange = event => {
+
+  /* 
+  handleComment will setState of comment to the value
+  of the input 
+  */
+  handleComment = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      comment: event.target.value
     })
   }
 
-  addComment = ev => { 
-    ev.preventDefault(); 
+  /* 
+    addcomment will setState of comments to include
+    the previous comments along with a new object 
+    where username is already set, and text is obtained
+    from this.state --> which we got from handleComment
+  */
+  addComment = event => { 
+    event.preventDefault(); 
     this.setState({
       comments: [
         ...this.state.comments,
@@ -60,6 +71,25 @@ class CommentSection extends React.Component {
     })
 }
 
+/*
+Logic for adding likes: 
+- We first create a variable that is set to the number of 
+likes.
+- The state of like is set to false, so when we click,
+since state of like is false, we will increase num of likes
+by 1. 
+- We will then setState to update 2 things: 
+  1.likes will be the new numOfLikes
+  2. We will set state of like to the opposite 
+  of false -> true
+
+- If state of like is true, when we click, we will decrease
+num of likes by 1. 
+- We will then setState to update 
+  1. new numOfLikes which is decreased by 1
+  2. We will set state of like to the opposite of true ->
+    false
+  */
 addLike = () =>{
   let numOfLikes = this.state.likes; 
 
@@ -74,6 +104,8 @@ addLike = () =>{
   })
 
 }
+
+
 
 componentDidMount() {
   console.log("CDM Invoked!");
@@ -98,7 +130,7 @@ componentDidMount() {
             <Comment key={index} comment={comment} />
           ))}
           <TimeStamp>{this.state.timestamp}</TimeStamp>
-          <CommentForm addComment={this.addComment} comment={this.state.comment} handleChange={this.handleChange}/>
+          <CommentForm addComment={this.addComment} comment={this.state.comment} handleComment={this.handleComment}/>
         </div>
       </BottomSection>
     );
