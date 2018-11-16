@@ -48,7 +48,7 @@ const Post = props => {
         <Username>{props.post.username}</Username>
       </TopPostSection>
       <div className="post-img">
-        <img src={props.post.imageUrl} alt="Posted Image" />
+        <img src={props.post.imageUrl} alt="User Post" />
       </div>
       <CommentSection comments={props.post.comments} timestamp={props.post.timestamp} likes={props.post.likes}/>
     </PostSection>

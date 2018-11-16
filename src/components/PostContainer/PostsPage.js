@@ -76,13 +76,11 @@ class PostsPage extends Component {
           searchPosts={this.searchPosts}
         />
         <PostContainer
-          /* We are going to pass posts which is initially 
-      going to be [] and then we will grab the data from
-      dummyData via componentDidMount and pass it down.
-
-        posts will equal to either all of our posts,
-        or filtered posts if there is an input
-      */
+        /* 
+        If there is something in filteredPosts, we will 
+        return filteredPosts, otherwise will will return 
+        this.state.posts
+        */
         posts={filteredPosts.length > 0 ? filteredPosts : this.state.posts}
         />
       </div>
