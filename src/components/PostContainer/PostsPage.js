@@ -54,9 +54,7 @@ class PostsPage extends Component {
 
     if (this.state.searchTerm !== "") {
       filteredPosts = filteredPosts.filter(post => {
-        let username = post.username
-          .toLowerCase()
-          .includes(this.state.searchTerm.toLowerCase());
+        let username = post.username.toLowerCase().includes(this.state.searchTerm.toLowerCase());
         return username;
       });
     }

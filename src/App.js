@@ -1,36 +1,16 @@
-import React, { Component } from 'react';
-import PostsPage from './components/PostContainer/PostsPage'
-import Authenticate from './Authentication/Authenticate'
-import './App.css';
+import React from "react";
 
-/*
-1. Import Authenticate 
-2. Pass App into Authenticate 
+import withAuthenticate from "./authentication/withAuthenticate";
+import PostsPage from "./PostContainer/PostsPage";
+import Login from "./Login/Login";
 
-3. componentDidMount will check local storage to see if user is loggedin
 
-*/
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: ""
-    }
-  }
-
-  componentDidMount() {
-    const user = localStorage.getItem("user");
-    this.setState({ username: user });
-  }
-
+class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-        <PostsPage />
-      </div>
-    );
+    return <ComponentFromWithAuthenticate />;
   }
 }
 
-export default Authenticate(App);
+export default App;
