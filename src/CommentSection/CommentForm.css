@@ -1,7 +1,8 @@
-/* .comment-box input {
+.comment-input {
     width: 100%;
     padding: 1.5rem 1rem;
     border: none;
     border-top: 1px solid #eee;
     outline: none;
-} */
+    font-size: 1.4rem;
+  }
