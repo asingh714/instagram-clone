@@ -1,0 +1,21 @@
+.post-container {
+    border: 1px solid #ddd;
+    width: 60rem;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  .post-container:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+  
+  .user-icons-comments-container {
+    padding: 0 1rem;
+  }
+  
+  .user-post-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  
