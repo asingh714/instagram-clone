@@ -1,26 +1,5 @@
-/* .bottom-section {
-    padding: 0 1rem;
-} */
-
-/* .like-comment-section {
-    margin-bottom: 1rem;
-} */
-
-.far {
-    font-size: 2rem;
-}
-
-.heart {
-    margin-right: 1rem;
-}
-
-/* .likes {
-    margin-bottom: 1rem;
-    font-weight: bold
-} */
-
-/* .timestamp {
+.user-timestamp {
     font-size: 1.2rem;
     color: gray;
     margin-bottom: 1rem;
-} */
+  }
