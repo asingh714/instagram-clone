@@ -1,7 +1,9 @@
-/* .user-comments {
+.comment-container {
     display: flex;
     margin-bottom: .5rem;
-} */
-/* .username {
+  }
+  
+  .username {
+    font-weight: bold;
     margin-right: .5rem;
-} */
+  }
